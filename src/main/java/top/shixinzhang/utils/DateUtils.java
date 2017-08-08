@@ -54,6 +54,19 @@ public final class DateUtils {
         return instance;
     }
 
+    public static String getMMdd(long time) {
+        return new SimpleDateFormat("MMdd", Locale.getDefault()).format(new Date(time));
+    }
+
+    public static String getMMddhhmmss(long time) {
+        return new SimpleDateFormat("MMddHHmmss", Locale.getDefault()).format(new Date(time));
+    }
+
+    public static String getYMdHms(long time) {
+        return new SimpleDateFormat(DEFAULT_PATTERN, Locale.getDefault()).format(new Date(time));
+    }
+
+
     /**
      * YEAR = 1
      * WEEK_OF_MONTH = 4
