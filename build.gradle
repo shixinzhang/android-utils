@@ -36,7 +36,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:support-annotations:$rootProject.supportLibVersion"
-    compile "com.android.support:support-v4:$rootProject.supportLibVersion"
+    compile "com.android.support:support-annotations:25.3.1"
+    compile "com.android.support:support-v4:25.3.1"
     compile "com.google.code.gson:gson:2.4"
 }
