@@ -227,4 +227,29 @@ public class NodeUtils {
         return performEdit(context, editNode, text);
     }
 
+    /**
+     * 根据 ID 获取节点的文字
+     * @param rootNode
+     * @param nodeId
+     * @return
+     */
+    public static String getTextByNodeId(@NonNull AccessibilityNodeInfo rootNode, final String nodeId) {
+        AccessibilityNodeInfo node = NodeUtils.findNode(rootNode, nodeId);
+        if (node != null && node.getText() != null) {
+            return node.getText().toString();
+        }
+        return null;
+    }
+
+    /**
+     * 添加节点的文字到 StringBuilder 中
+     * @param identityStr
+     * @param nodeInfo
+     */
+    public static void safetyAppendString(final StringBuilder identityStr, final AccessibilityNodeInfo nodeInfo) {
+        if (identityStr == null || nodeInfo == null || nodeInfo.getText() == null) {
+            return;
+        }
+        identityStr.append(nodeInfo.getText().toString());
+    }
 }
