@@ -83,7 +83,10 @@ public class NodeUtils {
     }
 
 
-    public static AccessibilityNodeInfo findNode(@NonNull AccessibilityNodeInfo root, final String viewId) {
+    public static AccessibilityNodeInfo findNode(AccessibilityNodeInfo root, final String viewId) {
+        if (root == null){
+            return null;
+        }
         List<AccessibilityNodeInfo> list = root.findAccessibilityNodeInfosByViewId(viewId);
 
         if (null == list || list.isEmpty())
@@ -92,6 +95,9 @@ public class NodeUtils {
     }
 
     public static AccessibilityNodeInfo findNode(@NonNull AccessibilityNodeInfo root, final String viewId, final String text) {
+        if (root == null){
+            return null;
+        }
         List<AccessibilityNodeInfo> list = root.findAccessibilityNodeInfosByViewId(viewId);
 
         if (null == list || list.isEmpty())
