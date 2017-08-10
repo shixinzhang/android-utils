@@ -233,7 +233,10 @@ public class NodeUtils {
      * @param nodeId
      * @return
      */
-    public static String getTextByNodeId(@NonNull AccessibilityNodeInfo rootNode, final String nodeId) {
+    public static String getTextByNodeId(AccessibilityNodeInfo rootNode, final String nodeId) {
+        if (rootNode == null){
+            return null;
+        }
         AccessibilityNodeInfo node = NodeUtils.findNode(rootNode, nodeId);
         if (node != null && node.getText() != null) {
             return node.getText().toString();
