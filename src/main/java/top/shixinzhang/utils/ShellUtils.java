@@ -66,4 +66,8 @@ public class ShellUtils {
             Toast.makeText(context, "请允许ROOT权限", Toast.LENGTH_LONG).show();
         }
     }
+
+    public static void clickBack() {
+        execCmd("input keyevent 4");
+    }
 }
