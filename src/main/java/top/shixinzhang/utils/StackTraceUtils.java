@@ -16,18 +16,30 @@
 
 package top.shixinzhang.utils;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 /**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * Description:
+ * <br> 堆栈检查
+ * <p>
+ * <br> Created by shixinzhang on 17/8/23.
+ * <p>
+ * <br> Email: shixinzhang2016@gmail.com
+ * <p>
+ * <br> https://about.me/shixinzhang
  */
-public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+
+public class StackTraceUtils {
+    private static final String TAG = "Utils";
+
+    /**
+     * 输出当前线程的堆栈
+     */
+    static void printStackTrace() {
+//        Log.d(TAG, Log.getStackTraceString(new Throwable()));
+//        Log.wtf(TAG, "this a fake error");
+
+        StackTraceElement st[] = Thread.currentThread().getStackTrace();
+        for (int i = 0; i < st.length; i++) {
+            System.out.println(i + ":" + st[i]);
+        }
     }
 }
