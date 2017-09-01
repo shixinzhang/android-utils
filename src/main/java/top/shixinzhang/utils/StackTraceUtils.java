@@ -31,7 +31,7 @@ public class StackTraceUtils {
     private static final String TAG = "Utils";
 
     /**
-     * 输出当前线程的堆栈
+     * 输出当前线程的调用栈
      */
     static void printStackTrace() {
 //        Log.d(TAG, Log.getStackTraceString(new Throwable()));
